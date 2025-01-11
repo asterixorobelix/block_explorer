@@ -19,6 +19,7 @@ The app adheres to recommended [best practices](https://developer.android.com/to
 * Ktor
 * Mockito
 * Truth
+* Room
 
 ## Improvements
 * Better UI
