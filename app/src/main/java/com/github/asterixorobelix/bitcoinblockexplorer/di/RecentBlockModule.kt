@@ -31,7 +31,7 @@ val recentBlockModule = module {
             }
         }
     }
-    single {
+    single<BlockExplorerDatabase> {
         Room.databaseBuilder(
             androidContext(),
             BlockExplorerDatabase::class.java, "block_explorer_database"

@@ -14,7 +14,7 @@ interface BlockDao {
     suspend fun loadAllByIds(blockIds: IntArray): List<BlockEntity>
 
     @Insert
-    suspend fun insertAll(vararg blocks: BlockEntity)
+    suspend fun insertAll( blocks: List<BlockEntity>)
 
     @Delete
     suspend fun delete(block: BlockEntity)

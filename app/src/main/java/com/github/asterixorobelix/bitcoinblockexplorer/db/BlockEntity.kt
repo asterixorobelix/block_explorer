@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "blocks")
 data class BlockEntity(
-    @PrimaryKey val id: Int,
+    @PrimaryKey val id: String,
     val blockHeight: Int?,
     val transactions: Int?,
     val difficulty: Double?,
