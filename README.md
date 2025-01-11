@@ -10,3 +10,13 @@ Show list of latest transactions coming into the mempool in real time.
 ## API
 * [MemPool API Documentation](https://mempool.space/docs/api) 
 * [Bitfinex API Documentation](https://docs.bitfinex.com/docs)
+
+## Libraries
+* Koin
+* Ktor
+* Mockito
+* Truth
+
+## Improvements
+* Better UI
+* More extensive tests
