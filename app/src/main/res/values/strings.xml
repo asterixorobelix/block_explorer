@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Bitcoin Block Explorer</string>
+    <string name="recent_blocks">Recent Blocks</string>
 </resources>

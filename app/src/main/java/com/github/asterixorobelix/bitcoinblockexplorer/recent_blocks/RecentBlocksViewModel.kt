@@ -15,7 +15,7 @@ class RecentBlocksViewModel(
     val state: StateFlow<RecentBlocksState> = _state
 
     /**
-     * Caches api response and returns recent blocks
+     * Returns recent blocks, potentially caching blocks info
      */
     suspend fun getRecentBlocks() {
         _state.emit(RecentBlocksState(loading = true))
