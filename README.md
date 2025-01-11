@@ -24,3 +24,6 @@ The app adheres to recommended [best practices](https://developer.android.com/to
 ## Improvements
 * Better UI
 * More extensive tests
+* CI/CD with Github Actions
+* PR template
+* Code linting with KtLint or Detekt
