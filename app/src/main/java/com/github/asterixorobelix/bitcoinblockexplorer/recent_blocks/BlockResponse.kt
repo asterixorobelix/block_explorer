@@ -10,7 +10,7 @@ data class BlockResponse(
     val version: Int? = null,
     val timestamp: Int? = null,
     val bits: Int? = null,
-    val nonce: Int? = null,
+    val nonce: Double? = null,
     val difficulty: Double? = null,
     @SerialName("merkle_root")
     val merkleRoot: String? = null,
@@ -22,5 +22,5 @@ data class BlockResponse(
     val previousBlockHash: String? = null,
     @SerialName("mediantime")
     val medianTime: Int? = null,
-    val extras: Extras? = Extras()
+    val extras: Extras? = null
 )

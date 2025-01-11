@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Extras(
     val totalFees: Int? = null,
-    val medianFee: Int? = null,
+    val medianFee: Double? = null,
     val feeRange: ArrayList<Double> = arrayListOf(),
     val reward: Int? = null,
     val pool: Pool? = Pool(),
@@ -20,14 +20,14 @@ data class Extras(
     val coinbaseSignature: String? = null,
     val coinbaseSignatureAscii: String? = null,
     @SerialName("avgTxSize")
-    val averageTransactionSize: Int? = null,
+    val averageTransactionSize: Double? = null,
     val totalInputs: Int? = null,
     val totalOutputs: Int? = null,
     @SerialName("totalOutputAmt")
-    val totalOutputAmount: Int? = null,
+    val totalOutputAmount: Double? = null,
     @SerialName("medianFeeAmt")
-    val medianFeeAmount: Int? = null,
-    val feePercentiles: ArrayList<Int> = arrayListOf(),
+    val medianFeeAmount: Double? = null,
+    val feePercentiles: ArrayList<Int>? =null,
     @SerialName("segwitTotalTxs")
     val segwitTotalTransactions: Int? = null,
     val segwitTotalSize: Int? = null,
