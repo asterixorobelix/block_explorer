@@ -66,6 +66,10 @@ dependencies {
     implementation(libs.ktor.client.core)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.koin)
+    implementation(libs.koinCompose)
+    implementation(libs.koinKtor)
+    implementation(libs.koinKtorLogger)
 
     testImplementation(libs.junit)
 
@@ -73,7 +77,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
