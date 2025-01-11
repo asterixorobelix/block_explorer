@@ -23,7 +23,8 @@ The app adheres to recommended [best practices](https://developer.android.com/to
 
 ## Improvements
 * Better UI
-* More extensive tests
+* More extensive unit tests. Add instrumented tests
 * CI/CD with Github Actions
 * PR template
 * Code linting with KtLint or Detekt
+* Kotlin Multiplatform Mobile, for an iOS app as well.
