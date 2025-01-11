@@ -10,10 +10,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlocksViewModel
 import com.github.asterixorobelix.bitcoinblockexplorer.ui.theme.BitcoinBlockExplorerTheme
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
@@ -25,6 +28,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             BitcoinBlockExplorerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
+                    val scope = rememberCoroutineScope()
+                    LaunchedEffect(key1 = true) {
+                        scope.launch {
+                            val blocks = viewModel.getRecentBlocks()
+                        }
+                    }
+
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)

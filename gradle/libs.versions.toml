@@ -1,13 +1,13 @@
 [versions]
 agp = "8.5.2"
-kotlin = "1.9.0"
-coreKtx = "1.13.1"
+kotlin = "2.1.0"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.6.1"
+lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
-composeBom = "2024.04.01"
+composeBom = "2024.12.01"
 kotlinxSerializationVersion = "1.8.0"
 ktor = "3.0.3"
 coroutines = "1.9.0"
@@ -41,4 +41,5 @@ koinKtorLogger = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "k
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
