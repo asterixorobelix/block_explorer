@@ -17,10 +17,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlocksViewModel
 import com.github.asterixorobelix.bitcoinblockexplorer.ui.theme.BitcoinBlockExplorerTheme
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: RecentBlocksViewModel by viewModels<RecentBlocksViewModel>()
+    private val viewModel: RecentBlocksViewModel by viewModel<RecentBlocksViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

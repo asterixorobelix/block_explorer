@@ -7,7 +7,7 @@ import io.ktor.client.statement.bodyAsText
 class MempoolClient(private val httpClient: HttpClient) {
 
     suspend fun getBlocks(): String {
-        val response = httpClient.get("$MEMPOOL_BASE_URL/blocks")
+        val response = httpClient.get("${MEMPOOL_BASE_URL}blocks")
         return response.bodyAsText()
     }
 

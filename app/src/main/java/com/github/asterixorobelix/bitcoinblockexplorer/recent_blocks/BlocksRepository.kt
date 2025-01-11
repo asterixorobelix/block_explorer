@@ -4,5 +4,5 @@ import com.github.asterixorobelix.bitcoinblockexplorer.network.MempoolClient
 
 class BlocksRepository(private val mempoolClient: MempoolClient) {
 
-    suspend fun getRecentBlocks()=mempoolClient.getBlocks()
+    suspend fun getRecentBlocks() = mempoolClient.getBlocks()
 }
