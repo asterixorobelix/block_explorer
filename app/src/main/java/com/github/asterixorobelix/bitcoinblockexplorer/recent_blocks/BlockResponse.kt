@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class BlockResponse(
-    val id: String? = null,
+    val id: String,
     val height: Int? = null,
     val version: Int? = null,
     val timestamp: Int? = null,

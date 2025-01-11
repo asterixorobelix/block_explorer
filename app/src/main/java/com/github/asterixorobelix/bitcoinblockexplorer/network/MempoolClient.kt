@@ -11,9 +11,9 @@ class MempoolClient(private val httpClient: HttpClient) {
     /**
      * Returns details on the past 15 blocks with fee and mining details in an extras field
      */
-    suspend fun getBlocks(): BlockResponse {
+    suspend fun getBlocks(): List<BlockResponse> {
         val response = httpClient.get("${MEMPOOL_BASE_URL}blocks").body<List<BlockResponse>>()
-        return response.first()
+        return response
     }
 
     companion object {
