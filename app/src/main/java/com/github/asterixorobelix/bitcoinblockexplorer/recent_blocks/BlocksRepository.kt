@@ -6,7 +6,9 @@ import com.github.asterixorobelix.bitcoinblockexplorer.network.MempoolClient
  * Retrieves block information
  * @param [mempoolClient]
  */
-class BlocksRepository(private val mempoolClient: MempoolClient) {
+class BlocksRepository(
+    private val mempoolClient: MempoolClient
+) {
 
     /**
      * Retrieves the last 15 blocks
@@ -25,4 +27,22 @@ class BlocksRepository(private val mempoolClient: MempoolClient) {
             )
         }
     }
+
+    /**
+     * Obtains information about a specific block
+     * @param blockID id of the block
+     * @return [RecentBlock]
+     */
+    suspend fun getBlockById(blockID: String): RecentBlock {
+        val response = mempoolClient.getBlockByID(id = blockID)
+        return RecentBlock(
+            id = response.id,
+            blockHeight = response.height,
+            transactions = response.transactionCount,
+            difficulty = response.difficulty,
+            averageFee = response.extras?.averageFee,
+            reward = response.extras?.reward
+        )
+    }
+
 }
