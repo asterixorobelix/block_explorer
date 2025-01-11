@@ -36,7 +36,7 @@ data class Extras(
     val utxoSetChange: Int? = null,
     val utxoSetSize: Int? = null,
     @SerialName("totalInputAmt")
-    val totalInputAmount: Int? = null,
+    val totalInputAmount: Double? = null,
     val virtualSize: Double? = null,
     val firstSeen: String? = null,
     val orphans: ArrayList<String> = arrayListOf(),
