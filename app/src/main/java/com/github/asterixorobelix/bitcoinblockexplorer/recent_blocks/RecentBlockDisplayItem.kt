@@ -1,7 +1,5 @@
 package com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks
 
-import android.content.res.Configuration
-import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,7 +17,10 @@ import com.github.asterixorobelix.bitcoinblockexplorer.ui.theme.DefaultPadding
 fun RecentBlockDisplayItem(recentBlock: RecentBlock) {
     Card {
         Column(modifier = Modifier.padding(DefaultPadding)) {
-            ConcatenatedText(text = "ID: ${recentBlock.id}", modifier = Modifier.padding(top = DefaultPadding))
+            ConcatenatedText(
+                text = "ID: ${recentBlock.id}",
+                modifier = Modifier.padding(top = DefaultPadding)
+            )
             Column(Modifier.padding(horizontal = DefaultPadding, vertical = DefaultPadding)) {
                 Row(
                     Modifier
@@ -27,7 +28,7 @@ fun RecentBlockDisplayItem(recentBlock: RecentBlock) {
                         .padding(vertical = DefaultPadding),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(text = "Height: ${recentBlock.blockHeight}")
+                    Text(text = "Block Height: ${recentBlock.blockHeight}")
                     Text(text = "Transactions: ${recentBlock.transactions}")
                 }
                 Column(
