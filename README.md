@@ -14,3 +14,9 @@ Show list of latest transactions coming into the mempool in real time.
 ## Libraries
 * Koin
 * Ktor
+* Mockito
+* Truth
+
+## Improvements
+* Better UI
+* More extensive tests
