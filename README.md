@@ -7,6 +7,9 @@ Tapping on a transaction reveals another component with all addresses involved a
 User can tap on multiple transactions to fetch this data (parallel).
 Show list of latest transactions coming into the mempool in real time.
 
+## How it works
+The app adheres to recommended [best practices](https://developer.android.com/topic/architecture/recommendations) wherever possible. The app also uses as many first party component libraries as possible, such as ViewModels and Coroutines.
+
 ## API
 * [MemPool API Documentation](https://mempool.space/docs/api) 
 * [Bitfinex API Documentation](https://docs.bitfinex.com/docs)
