@@ -1,6 +1,7 @@
 package com.github.asterixorobelix.bitcoinblockexplorer
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -18,6 +19,7 @@ import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlock
 import com.github.asterixorobelix.bitcoinblockexplorer.ui.theme.BitcoinBlockExplorerTheme
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.compose.getKoin
 
 class MainActivity : ComponentActivity() {
 
@@ -35,6 +37,7 @@ class MainActivity : ComponentActivity() {
                         scope.launch {
                             val blocks = viewModel.getRecentBlocks()
                         }
+
                     }
 
                     Greeting(
