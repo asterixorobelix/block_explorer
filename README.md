@@ -9,5 +9,5 @@ User can tap on multiple transactions to fetch this data (parallel).
 Show list of latest transactions coming into the mempool in real time.
 
 ## API
-[API](https://mempool.space/docs/api) 
-[Documentation](https://docs.bitfinex.com/docs)
+* [MemPool API Documentation](https://mempool.space/docs/api) 
+* [Bitfinex API Documentation](https://docs.bitfinex.com/docs)
