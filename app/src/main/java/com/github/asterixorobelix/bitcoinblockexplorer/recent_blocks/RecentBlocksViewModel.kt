@@ -33,7 +33,7 @@ class RecentBlocksViewModel(
         }
         val apiBlocks = blocksRepository.getRecentBlocks()
         if (apiBlocks.firstOrNull()?.id != dbBlocks.firstOrNull()?.id) {
-            _state.emit(RecentBlocksState(null, false))
+            _state.emit(RecentBlocksState(null, loading = true))
             blockExplorerDatabase.blockDao().insertAll(apiBlocks.map {
                 BlockEntity(
                     id = it.id,
