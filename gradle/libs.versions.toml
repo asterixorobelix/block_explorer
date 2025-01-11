@@ -14,6 +14,7 @@ coroutines = "1.9.0"
 koinVersion = "4.0.1"
 mockitoVersion = "5.15.2"
 mockitoKotlinVersion = "5.4.0"
+roomVersion = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,6 +49,11 @@ koin= { module = "io.insert-koin:koin-android", version.ref = "koinVersion" }
 koinCompose= { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinVersion" }
 koinKtor = { module = "io.insert-koin:koin-ktor", version.ref = "koinVersion" }
 koinKtorLogger = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koinVersion" }
+
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "roomVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

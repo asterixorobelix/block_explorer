@@ -20,6 +20,16 @@ class MempoolClient(private val httpClient: HttpClient) {
         return response
     }
 
+    /**
+     * Returns details of a specific block
+     * @param id block id. eg: "0000000000000000000384f28cb3b9cf4377a39cfd6c29ae9466951de38c0529"
+     * @return [BlockResponse]
+     */
+    suspend fun getBlockByID(id:String): BlockResponse {
+        val response = httpClient.get("${MEMPOOL_BASE_URL}block/$id").body<BlockResponse>()
+        return response
+    }
+
     companion object {
         const val MEMPOOL_BASE_URL = "https://mempool.space/api/v1/"
     }
