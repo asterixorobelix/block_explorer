@@ -30,11 +30,11 @@ fun RecentBlockDisplayItem(recentBlock: RecentBlock) {
                     Text(text = "Height: ${recentBlock.blockHeight}")
                     Text(text = "Transactions: ${recentBlock.transactions}")
                 }
-                Row(
+                Column(
                     Modifier
                         .fillMaxWidth()
                         .padding(vertical = DefaultPadding),
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    verticalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(text = "Difficulty: ${recentBlock.difficulty}")
                     Text(text = "Average fee: ${recentBlock.averageFee}")
