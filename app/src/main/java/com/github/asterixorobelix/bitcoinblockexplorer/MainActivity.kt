@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     composable<RecentBlocksRoute> { RecentBlocksScreen{
                         navController.navigate(route = BlockDetailRoute(id = it))
                     } }
-                    composable<BlockDetailRoute> { BlockDetailScreen() }
+                    composable<BlockDetailRoute>{ BlockDetailScreen(blockDetailRoute = BlockDetailRoute(id = "1234"))}
                 }
             }
         }

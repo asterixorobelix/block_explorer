@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun BlockDetailScreen(blockDetailRoute: BlockDetailRoute? = null){
+fun BlockDetailScreen(blockDetailRoute: BlockDetailRoute){
     Scaffold (modifier = Modifier.fillMaxSize()){ innerPadding ->
         Card(modifier = Modifier.fillMaxWidth().padding(innerPadding)) {
             Text(text = blockDetailRoute?.id ?: "No id")
