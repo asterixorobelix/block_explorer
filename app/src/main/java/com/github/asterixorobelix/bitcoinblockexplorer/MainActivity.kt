@@ -25,9 +25,9 @@ class MainActivity : ComponentActivity() {
 
                 NavHost(navController = navController, startDestination = RecentBlocksRoute) {
                     composable<RecentBlocksRoute> { RecentBlocksScreen{
-                        navController.navigate(route = BlockDetailRoute(id = "1234"))
+                        navController.navigate(route = BlockDetailRoute(id = it))
                     } }
-                    composable<BlockDetailRoute> { BlockDetailScreen(blockDetailRoute = BlockDetailRoute("1234")) }
+                    composable<BlockDetailRoute> { BlockDetailScreen() }
                 }
             }
         }
