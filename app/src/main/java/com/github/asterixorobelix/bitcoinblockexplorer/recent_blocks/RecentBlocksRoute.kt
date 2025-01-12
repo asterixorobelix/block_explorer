@@ -1,0 +1,6 @@
+package com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+object RecentBlocksRoute
