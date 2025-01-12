@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlocksRoute
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlocksScreen
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.detail.BlockDetailRoute
@@ -24,10 +25,15 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
 
                 NavHost(navController = navController, startDestination = RecentBlocksRoute) {
-                    composable<RecentBlocksRoute> { RecentBlocksScreen{
-                        navController.navigate(route = BlockDetailRoute(id = it))
-                    } }
-                    composable<BlockDetailRoute>{ BlockDetailScreen(blockDetailRoute = BlockDetailRoute(id = "1234"))}
+                    composable<RecentBlocksRoute> {
+                        RecentBlocksScreen {
+                            navController.navigate(route = BlockDetailRoute(id = it))
+                        }
+                    }
+                    composable<BlockDetailRoute> { backStackEntry ->
+                        val detailRoute: BlockDetailRoute = backStackEntry.toRoute()
+                        BlockDetailScreen(detailRoute)
+                    }
                 }
             }
         }
