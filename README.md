@@ -28,3 +28,4 @@ The app adheres to recommended [best practices](https://developer.android.com/to
 * PR template
 * Code linting with KtLint or Detekt
 * Kotlin Multiplatform Mobile, for an iOS app as well.
+* Use Realm for the database instead of Room, so that the app is KMP ready.

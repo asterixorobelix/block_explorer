@@ -1,5 +1,6 @@
 package com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,8 +15,10 @@ import com.github.asterixorobelix.bitcoinblockexplorer.displayComponents.Concate
 import com.github.asterixorobelix.bitcoinblockexplorer.ui.theme.DefaultPadding
 
 @Composable
-fun RecentBlockDisplayItem(recentBlock: RecentBlock) {
-    Card {
+fun RecentBlockDisplayItem(recentBlock: RecentBlock, onBlockClick: (String) -> Unit) {
+    Card(modifier = Modifier.clickable {
+        onBlockClick.invoke(recentBlock.id)
+    }) {
         Column(modifier = Modifier.padding(DefaultPadding)) {
             ConcatenatedText(
                 text = "ID: ${recentBlock.id}",
@@ -57,7 +60,9 @@ fun RecentBlocksDisplayItem_Preview() {
             transactions = 1627,
             difficulty = 28587155782195.14,
             averageFee = 10038,
-            reward = 641321983
+            reward = 641321983,
         )
-    )
+    ) {
+
+    }
 }
