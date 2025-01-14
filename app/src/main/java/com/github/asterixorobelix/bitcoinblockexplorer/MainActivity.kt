@@ -25,15 +25,16 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
 
                 NavHost(navController = navController, startDestination = RecentBlocksRoute) {
+                    composable<BlockDetailRoute> { backStackEntry ->
+                        val detailRoute: BlockDetailRoute = backStackEntry.toRoute()
+                        BlockDetailScreen(detailRoute)
+                    }
                     composable<RecentBlocksRoute> {
                         RecentBlocksScreen {
                             navController.navigate(route = BlockDetailRoute(id = it))
                         }
                     }
-                    composable<BlockDetailRoute> { backStackEntry ->
-                        val detailRoute: BlockDetailRoute = backStackEntry.toRoute()
-                        BlockDetailScreen(detailRoute)
-                    }
+
                 }
             }
         }

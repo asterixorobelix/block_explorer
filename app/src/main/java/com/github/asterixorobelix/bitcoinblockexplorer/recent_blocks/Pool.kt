@@ -7,5 +7,5 @@ data class Pool(
     val id: Int? = null,
     val name: String? = null,
     val slug: String? = null,
-    val minerNames: String? = null
+    val minerNames: List<String>? = null
 )
