@@ -5,6 +5,7 @@ import com.github.asterixorobelix.bitcoinblockexplorer.db.BlockExplorerDatabase
 import com.github.asterixorobelix.bitcoinblockexplorer.network.MempoolClient
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.BlocksRepository
 import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlocksViewModel
+import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.detail.BlockDetailViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
@@ -16,6 +17,7 @@ import org.koin.dsl.module
 val recentBlockModule = module {
     single { MempoolClient(get()) }
     viewModel { RecentBlocksViewModel(get(), get ()) }
+    viewModel { BlockDetailViewModel(get()) }
     single { BlocksRepository(get()) }
     single {
         HttpClient {
