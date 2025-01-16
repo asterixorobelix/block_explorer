@@ -8,9 +8,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.RecentBlocksState
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 
@@ -18,6 +21,7 @@ import org.koin.androidx.compose.koinViewModel
 fun BlockDetailScreen(blockDetailRoute: BlockDetailRoute){
     Scaffold (modifier = Modifier.fillMaxSize()){ innerPadding ->
         val viewModel: BlockDetailViewModel = koinViewModel()
+        val state: State<BlockDetailState> =  viewModel.state.collectAsState()
 
         val scope = rememberCoroutineScope()
         LaunchedEffect(key1 = true) {

@@ -1,6 +1,7 @@
 package com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks
 
 import com.github.asterixorobelix.bitcoinblockexplorer.network.MempoolClient
+import com.github.asterixorobelix.bitcoinblockexplorer.recent_blocks.detail.BlockDetail
 
 /**
  * Retrieves block information
@@ -31,17 +32,18 @@ class BlocksRepository(
     /**
      * Obtains information about a specific block
      * @param blockID id of the block
-     * @return [RecentBlock]
+     * @return [BlockDetail]
      */
-    suspend fun getBlockById(blockID: String): RecentBlock {
+    suspend fun getBlockById(blockID: String): BlockDetail {
         val response = mempoolClient.getBlockByID(id = blockID)
-        return RecentBlock(
+        return BlockDetail(
             id = response.id,
-            blockHeight = response.height,
-            transactions = response.transactionCount,
+            height = response.height,
+            transactionCount = response.transactionCount,
             difficulty = response.difficulty,
-            averageFee = response.extras?.averageFee,
-            reward = response.extras?.reward
+            averageTransactionSize = response.extras?.averageTransactionSize,
+            reward = response.extras?.reward,
+            totalFees = response.extras?.totalFees,
         )
     }
 
